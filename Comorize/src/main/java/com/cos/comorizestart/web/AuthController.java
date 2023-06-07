@@ -1,8 +1,16 @@
 package com.cos.comorizestart.web;
 
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+import javax.validation.Valid;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -10,8 +18,6 @@ import com.cos.comorizestart.domain.user.User;
 import com.cos.comorizestart.service.AuthService;
 import com.cos.comorizestart.web.dto.auth.SignupReq;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
@@ -33,7 +39,19 @@ public class AuthController {
 	}
 	
 	@PostMapping("/auth/signup")
-	public String signup(SignupReq signupReq) {
+	public String signup(@Valid SignupReq signupReq, BindingResult bindingResult) {
+		
+		if(bindingResult.hasErrors()) {
+			Map<String, String> errorMap = new HashMap<>();
+			
+			for (FieldError error: bindingResult.getFieldErrors()) {
+				errorMap.put(error.getField(), error.getDefaultMessage());
+				System.out.println("=================");
+				System.out.println(error.getDefaultMessage());
+				System.out.println("=================");
+			}
+		}
+		
 		log.info(signupReq.toString());
 		
 		User user = signupReq.toEntity();
