@@ -25,9 +25,10 @@ public class SecurityConfig {
 			.anyRequest().permitAll()
 			.and()
 			.formLogin()
-			.loginPage("/auth/signin")
+			.loginPage("/auth/signin") // 인증이 필요한 페이지 요청 시 진행 (GET 방식)  
+			.loginProcessingUrl("/auth/signin") // 로그인 POST요청 시 진행 (POST 방식)
 			.defaultSuccessUrl("/");
 		
 		return http.build();
-	}
+	}	
 }
