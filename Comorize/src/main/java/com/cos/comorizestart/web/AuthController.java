@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.cos.comorizestart.domain.user.User;
+import com.cos.comorizestart.handler.ex.CustomValidationException;
 import com.cos.comorizestart.service.AuthService;
 import com.cos.comorizestart.web.dto.auth.SignupReq;
 
@@ -46,20 +47,16 @@ public class AuthController {
 			
 			for (FieldError error: bindingResult.getFieldErrors()) {
 				errorMap.put(error.getField(), error.getDefaultMessage());
-				System.out.println("=================");
-				System.out.println(error.getDefaultMessage());
-				System.out.println("=================");
 			}
+			
+			throw new CustomValidationException("유효성검사 실패함", errorMap);
+			
+		} else {
+			User user = signupReq.toEntity();
+			User userEntity = authservice.회원가입(user);
+			
+			return "auth/signin";			
 		}
-		
-		log.info(signupReq.toString());
-		
-		User user = signupReq.toEntity();
-		log.info(user.toString());
-		
-		User userEntity = authservice.회원가입(user);
-		System.out.println(userEntity);
-		return "auth/signin";
 	}
 }
 
