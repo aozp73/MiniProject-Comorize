@@ -1,4 +1,4 @@
-package com.cos.comorizestart.web.dtoC;
+package com.cos.comorizestart.web.dto;
 
 import java.util.Map;
 
