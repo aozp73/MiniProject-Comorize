@@ -36,5 +36,7 @@ spring:
       name: test
       password: 1234   
 
-#file:
-#  path: C:/workspace/springbootwork/upload/
+file:
+  path: C:/workspace2/springbootwork/upload/
+
+  
