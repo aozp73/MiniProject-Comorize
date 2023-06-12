@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cos.comorizestart.config.auth.PrincipalDetails;
 import com.cos.comorizestart.domain.user.User;
-import com.cos.comorizestart.handler.ex.CustomValidationAPIException;
+import com.cos.comorizestart.handler.ex.CustomValidationApiException;
 import com.cos.comorizestart.service.UserService;
 import com.cos.comorizestart.web.dto.CMRespDTO;
 import com.cos.comorizestart.web.dto.UserUpdateDTO;
@@ -40,7 +40,7 @@ public class UserApiController {
 				errorMap.put(error.getField(), error.getDefaultMessage());
 			}
 	
-			throw new CustomValidationAPIException("유효성검사 실패함", errorMap);
+			throw new CustomValidationApiException("유효성검사 실패함", errorMap);
 		} else {
 
 			User userEntity = userService.회원수정(id, userUpdateDTO.toEntity());

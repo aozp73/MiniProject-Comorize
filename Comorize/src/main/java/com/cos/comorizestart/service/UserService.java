@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.cos.comorizestart.domain.user.User;
 import com.cos.comorizestart.domain.user.UserRepository;
-import com.cos.comorizestart.handler.ex.CustomValidationAPIException;
+import com.cos.comorizestart.handler.ex.CustomValidationApiException;
 
 import lombok.RequiredArgsConstructor;
 
@@ -23,7 +23,7 @@ public class UserService {
 	public User 회원수정(int id, User user) {
 		// 1. 영속화
 		User userEntity = userRepository.findById(id).orElseThrow(() -> {
-				return new CustomValidationAPIException("찾을 수 없는 id입니다.");
+				return new CustomValidationApiException("찾을 수 없는 id입니다.");
 		});
 		
 		// 2. 영속화된 오브젝트 수정 (더티 체킹 진행)

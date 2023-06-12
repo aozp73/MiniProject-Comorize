@@ -2,18 +2,18 @@ package com.cos.comorizestart.handler.ex;
 
 import java.util.Map;
 
-public class CustomValidationAPIException extends RuntimeException{
+public class CustomValidationApiException extends RuntimeException{
 
 	private static final long serialVersionUID = 1L;
 
 	private Map<String, String> errorMap;
 	
-	public CustomValidationAPIException(String message, Map<String, String> errorMap) {
+	public CustomValidationApiException(String message, Map<String, String> errorMap) {
 		super(message);
 		this.errorMap = errorMap;
 	}
 	
-	public CustomValidationAPIException(String message) {
+	public CustomValidationApiException(String message) {
 		super(message);
 	}
 	
