@@ -26,10 +26,16 @@ public class ControllerExceptionHandler {
 	@ExceptionHandler(CustomValidationException.class)
 	public String validationException(CustomValidationException e) {
 		
-		return Script.back(e.getErrorMap().toString());
+		if (e.getErrorMap() == null) {
+			
+			return Script.back(e.getMessage());
+		}else {
+			
+			return Script.back(e.getErrorMap().toString());
+		}
 	}
 	
-	// Ajax 통신 또는 Android 통신 때 앞단 개발자에게 응답 시 사용
+	// Ajax 통신 또는 Anzdroid 통신 때 앞단 개발자에게 응답 시 사용
 	@ExceptionHandler(CustomValidationApiException.class)
 	public ResponseEntity<?> validationApiException(CustomValidationApiException e) {
 		

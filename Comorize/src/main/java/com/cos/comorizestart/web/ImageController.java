@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.cos.comorizestart.config.auth.PrincipalDetails;
+import com.cos.comorizestart.handler.ex.CustomValidationException;
 import com.cos.comorizestart.service.ImageService;
 import com.cos.comorizestart.web.dto.image.ImageUploadDTO;
 
@@ -35,6 +36,10 @@ public class ImageController {
 	@PostMapping("/image")
 	public String imageUpload(ImageUploadDTO imageUploadDTO, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		 
+		if (imageUploadDTO.getFile().isEmpty()) {
+			throw new CustomValidationException("이미지가 첨부되지 않았습니다", null);
+		}
+		
 		imageService.사진업로드(imageUploadDTO, principalDetails);
 		return "redirect:/user/"+principalDetails.getUser().getId();
 	}

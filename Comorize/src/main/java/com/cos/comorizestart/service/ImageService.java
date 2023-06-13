@@ -7,8 +7,10 @@ import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.cos.comorizestart.config.auth.PrincipalDetails;
+import com.cos.comorizestart.domain.image.Image;
 import com.cos.comorizestart.domain.image.ImageRepository;
 import com.cos.comorizestart.web.dto.image.ImageUploadDTO;
 
@@ -23,6 +25,7 @@ public class ImageService {
 	
 	private final ImageRepository imageRepository;
 	
+	@Transactional
 	public void 사진업로드(ImageUploadDTO imageUploadDTO, PrincipalDetails principalDetails) {
 		UUID uuid = UUID.randomUUID();
 		String imageFileName = uuid + imageUploadDTO.getFile().getOriginalFilename();
@@ -35,5 +38,11 @@ public class ImageService {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		// image 테이블에 저장
+		Image image = imageUploadDTO.toEntity(imageFileName, principalDetails.getUser());
+		Image imageEntity = imageRepository.save(image);
+		
+		System.out.println(imageEntity);
 	}
 }
