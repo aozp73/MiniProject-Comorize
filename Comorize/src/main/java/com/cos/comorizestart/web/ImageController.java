@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.cos.comorizestart.config.auth.PrincipalDetails;
+import com.cos.comorizestart.domain.image.Image;
 import com.cos.comorizestart.handler.ex.CustomValidationException;
 import com.cos.comorizestart.service.ImageService;
 import com.cos.comorizestart.web.dto.image.ImageUploadDTO;

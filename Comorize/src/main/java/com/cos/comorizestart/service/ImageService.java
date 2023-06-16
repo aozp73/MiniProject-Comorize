@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.cos.comorizestart.config.auth.PrincipalDetails;
 import com.cos.comorizestart.domain.image.Image;
 import com.cos.comorizestart.domain.image.ImageRepository;
+import com.cos.comorizestart.domain.user.UserRepository;
 import com.cos.comorizestart.web.dto.image.ImageUploadDTO;
 
 import lombok.RequiredArgsConstructor;
@@ -42,7 +43,7 @@ public class ImageService {
 		// image 테이블에 저장
 		Image image = imageUploadDTO.toEntity(imageFileName, principalDetails.getUser());
 		Image imageEntity = imageRepository.save(image);
-		
-		System.out.println(imageEntity);
+		System.out.println(imageEntity.getUser());
+//		System.out.println(imageEntity.getUser().getName());
 	}
 }

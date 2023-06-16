@@ -3,6 +3,7 @@ package com.cos.comorizestart.domain.image;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -30,7 +31,7 @@ public class Image {
 	private String postImageUrl; // 사진을 전송받아서 그 사진을 서버 내 특정 폴더에 저장 (DB에 해당 경로 저장)
 	
 	@JoinColumn(name="userId")
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	private User user;
 	
 	private LocalDateTime createDate;
@@ -39,4 +40,11 @@ public class Image {
 	public void createdDate() {
 		this.createDate = LocalDateTime.now();
 	}
+
+//	@Override
+//	public String toString() {
+//		return "Image [id=" + id + ", catpion=" + catpion + ", postImageUrl=" + postImageUrl 
+//				+ ", createDate=" + createDate + "]";
+//	}
+	
 }
