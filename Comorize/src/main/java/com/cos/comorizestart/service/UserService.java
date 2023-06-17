@@ -10,6 +10,7 @@ import com.cos.comorizestart.domain.user.User;
 import com.cos.comorizestart.domain.user.UserRepository;
 import com.cos.comorizestart.handler.ex.CustomException;
 import com.cos.comorizestart.handler.ex.CustomValidationApiException;
+import com.cos.comorizestart.web.dto.user.UserProfileDTO;
 
 import lombok.RequiredArgsConstructor;
 
@@ -20,12 +21,18 @@ public class UserService {
 	private final UserRepository userRepository;
 	private final BCryptPasswordEncoder bCryptPasswordEncoder;
 	
-	public User 회원프로필(int userId) {
-		User userEntity = userRepository.findById(userId).orElseThrow(()->{
+	public UserProfileDTO 회원프로필(int pageUserId, int principalId) {
+		UserProfileDTO dto = new UserProfileDTO();
+		
+		User userEntity = userRepository.findById(pageUserId).orElseThrow(()->{
 			throw new CustomException("해당 프로필 페이지는 없는 페이지입니다.");
 		});
 		
-		return userEntity;
+		dto.setUser(userEntity);
+		dto.setPageOwnerState(pageUserId == principalId);
+		dto.setImageCount(userEntity.getImages().size());
+		
+		return dto;
 	}
 	
 	@Transactional

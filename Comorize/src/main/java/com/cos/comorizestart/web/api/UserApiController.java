@@ -17,7 +17,7 @@ import com.cos.comorizestart.domain.user.User;
 import com.cos.comorizestart.handler.ex.CustomValidationApiException;
 import com.cos.comorizestart.service.UserService;
 import com.cos.comorizestart.web.dto.CMRespDTO;
-import com.cos.comorizestart.web.dto.UserUpdateDTO;
+import com.cos.comorizestart.web.dto.user.UserUpdateDTO;
 
 import lombok.RequiredArgsConstructor;
 

@@ -13,6 +13,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 
 import com.cos.comorizestart.domain.image.Image;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -53,7 +54,8 @@ public class User {
 	// User를 Select할 때 해당 User id로 등록된 image들을 전략에 맞게 가져 오라는 의미
 	// LAZY로 설정하면 User를 select할 때 기본적으로는 images를 호출하지 않음
 	// (getImages() 함수를 호출한 뒤, images들을 호출할 때 select문 발동)
-	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+	@JsonIgnoreProperties({"user"})
 	private List<Image> images;
 	
 	private LocalDateTime createDate;

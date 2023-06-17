@@ -1,4 +1,4 @@
-package com.cos.comorizestart.web.dto;
+package com.cos.comorizestart.web.dto.user;
 
 import javax.validation.constraints.NotBlank;
 
