@@ -30,7 +30,6 @@ public class SubscribeService {
 			subscribeRepository.mUnSubscribe(fromUserId, toUserId);			
 		} catch (Exception e) {
 			throw new CustomApiException("이미 구독 취소를 하였습니다.");
-		}
-				
+		}		
 	}
 }
