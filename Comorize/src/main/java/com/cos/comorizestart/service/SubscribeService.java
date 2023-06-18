@@ -1,10 +1,13 @@
 package com.cos.comorizestart.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.cos.comorizestart.domain.subscribe.SubscribeRepository;
 import com.cos.comorizestart.handler.ex.CustomApiException;
+import com.cos.comorizestart.web.dto.subscribe.SubscribeDTO;
 
 import lombok.RequiredArgsConstructor;
 
@@ -13,6 +16,13 @@ import lombok.RequiredArgsConstructor;
 public class SubscribeService {
 
 	private final SubscribeRepository subscribeRepository;
+	
+	@Transactional(readOnly = true)
+	public List<SubscribeDTO> 구독리스트(int principalId, int pageUserId){
+		
+		return null;
+	}
+	
 	
 	@Transactional
 	public void 구독하기(int fromUserId, int toUserId) {
