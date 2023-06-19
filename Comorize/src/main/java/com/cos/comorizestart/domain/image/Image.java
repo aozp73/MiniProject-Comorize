@@ -12,6 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 
 import com.cos.comorizestart.domain.user.User;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -30,6 +31,7 @@ public class Image {
 	private String catpion;          // 오늘 나 너무 피곤해 (사진 설명)
 	private String postImageUrl; // 사진을 전송받아서 그 사진을 서버 내 특정 폴더에 저장 (DB에 해당 경로 저장)
 	
+	@JsonIgnoreProperties({"images"})
 	@JoinColumn(name="userId")
 	@ManyToOne(fetch = FetchType.EAGER)
 	private User user;
