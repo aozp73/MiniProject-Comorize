@@ -7,16 +7,18 @@
 	(5) 댓글삭제	
  */
 
+let page = 0;
+
 // (1) 스토리 로드하기
 function storyLoad() {
   $.ajax({
     type: "get",
-    url: `/api/image`,
+    url: `/api/image?page=${page}`,
     dataType: "json",
   }).done(res => {
 	console.log("성공",res);
 	
-	res.data.forEach((image)=>{
+	res.data.content.forEach((image)=>{
 		let storyItem = getStoryItem(image);
 		$("#storyList").append(storyItem)
 	});
@@ -46,7 +48,7 @@ function getStoryItem(image) {
 		<div class="sl__item__contents__icon">
 
 			<button>
-				<i class="fas fa-heart active" id="storyLikeIcon-1" onclick="toggleLike()"></i>
+				<i class="fas fa-heart active" id="storyLikeIcon-${image.id}" onclick="toggleLike(${image.id})"></i>
 			</button>
 		</div>
 
@@ -81,15 +83,26 @@ function getStoryItem(image) {
 	return item;
 }
 
-// (2) 스토리 스크롤 페이징하기
+// (2) 스토리 스크롤 페이징
 $(window).scroll(() => {
+//	console.log("윈도우 scrollTop: "+ $(window).scrollTop())
+//	console.log("문서의 높이: "+ $(document).height())
+//	console.log("윈도우 높이: "+ $(window).height())
 
+	let checkNum = $(document).height() - $(window).scrollTop() - $(window).height();
+	console.log(checkNum)
+	
+	if(-1 < checkNum && checkNum< 1){
+		page++;
+		storyLoad()	
+	}
+	
 });
 
 
 // (3) 좋아요, 안좋아요
-function toggleLike() {
-	let likeIcon = $("#storyLikeIcon-1");
+function toggleLike(imageId) {
+	let likeIcon = $(`#storyLikeIcon-${imageId}`);
 	if (likeIcon.hasClass("far")) {
 		likeIcon.addClass("fas");
 		likeIcon.addClass("active");
