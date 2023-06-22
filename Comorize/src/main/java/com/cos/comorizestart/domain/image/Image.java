@@ -1,6 +1,7 @@
 package com.cos.comorizestart.domain.image;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,8 +10,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
+import javax.persistence.Transient;
 
+import com.cos.comorizestart.domain.likes.Likes;
 import com.cos.comorizestart.domain.user.User;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -36,7 +40,17 @@ public class Image {
 	@ManyToOne(fetch = FetchType.EAGER)
 	private User user;
 	
+	@JsonIgnoreProperties({"image"})
+	@OneToMany(mappedBy = "image")
+	private List<Likes> likes;
+	
 	private LocalDateTime createDate;
+	
+	@Transient // DB에 컬럼이 만들어지지 않음
+	private boolean likeState;
+	
+	@Transient
+	private int likeCount;
 	
 	@PrePersist 
 	public void createdDate() {
