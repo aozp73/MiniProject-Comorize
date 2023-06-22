@@ -100,8 +100,14 @@ function toggleSubscribeModal(obj) {
 	}
 }
 
-// (4) 유저 프로파일 사진 변경 (완)
-function profileImageUpload() {
+// (4) 유저 프로파일 사진 변경
+function profileImageUpload(pageUserId, principalId) {
+	
+	if(pageUserId != principalId){
+		alert("프로필 사진을 수정할 수 없는 유저입니다.")
+		return;
+	}
+	
 	$("#userProfileImageInput").click();
 
 	$("#userProfileImageInput").on("change", (e) => {
@@ -112,12 +118,32 @@ function profileImageUpload() {
 			return;
 		}
 
-		// 사진 전송 성공시 이미지 변경
-		let reader = new FileReader();
-		reader.onload = (e) => {
-			$("#userProfileImage").attr("src", e.target.result);
-		}
-		reader.readAsDataURL(f); // 이 코드 실행시 reader.onload 실행됨.
+		let profileImageForm = $("#userProfileImageForm")[0];
+		console.log(profileImageForm)
+		
+		let formData = new FormData(profileImageForm)
+
+		$.ajax({
+			type: "put",
+			url: `/api/user/${principalId}/profileImageUrl`,
+			data: formData,
+			contentType: false, //필수  x-www-form-urlencoded로 파싱됨.
+			processData: false, //필수 : contentType을 false로 줬을 때 쿼리 스트링으로 자동 설정됨. 그거 해제 하는 법
+			enctype: "multipart/form-data", // 필수 아님
+			dataType: "json"
+		}).done(res => {
+
+			// 사진 전송 성공시 이미지 변경
+			let reader = new FileReader();
+			reader.onload = (e) => {
+				$("#userProfileImage").attr("src", e.target.result);
+			}
+			reader.readAsDataURL(f); // 이 코드 실행시 reader.onload 실행됨.
+		}).fail(error=>{
+			console.log("오류", error);
+		});
+
+	
 	});
 }
 
