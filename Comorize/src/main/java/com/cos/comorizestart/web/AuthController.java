@@ -42,21 +42,11 @@ public class AuthController {
 	@PostMapping("/auth/signup")
 	public String signup(@Valid SignupReq signupReq, BindingResult bindingResult) {
 		
-		if(bindingResult.hasErrors()) {
-			Map<String, String> errorMap = new HashMap<>();
-			
-			for (FieldError error: bindingResult.getFieldErrors()) {
-				errorMap.put(error.getField(), error.getDefaultMessage());
-			}
-			
-			throw new CustomValidationException("유효성검사 실패함", errorMap);
-			
-		} else {
 			User user = signupReq.toEntity();
 			User userEntity = authservice.회원가입(user);
 			
 			return "auth/signin";			
-		}
+	
 	}
 }
 
