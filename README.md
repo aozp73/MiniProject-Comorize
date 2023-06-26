@@ -19,22 +19,10 @@
 <br>
 
 ### 상세설명 - 기술 블로그
-- [회원가입](https://blog.naver.com/aozp73/223139278202)
-- [로그인](https://blog.naver.com/aozp73/223139280833)
-- [회원정보 수정](https://blog.naver.com/aozp73/223139281973)
-- [구독하기](https://blog.naver.com/aozp73/223139282846)
-- [프로필 페이지](https://blog.naver.com/aozp73/223139284380)
-- [메인 사진 페이지](https://blog.naver.com/aozp73/223139290533)
-- [좋아요](https://blog.naver.com/aozp73/223139292120)
-- [인기 페이지](https://blog.naver.com/aozp73/223139292832)
-- [댓글 기능](https://blog.naver.com/aozp73/223139295036)
-  
-  <br>
-- [Securit](https://blog.naver.com/aozp73/223139297871)
-- [AOP](https://blog.naver.com/aozp73/223139298401)
-- [OAuth](https://blog.naver.com/aozp73/223139299149)
-- [공통응답 DTO](https://blog.naver.com/aozp73/223139279475)
-<br>
+- [회원가입](https://blog.naver.com/aozp73/223139278202), &nbsp; [로그인](https://blog.naver.com/aozp73/223139280833), &nbsp; [회원정보 수정](https://blog.naver.com/aozp73/223139281973)
+- [구독하기](https://blog.naver.com/aozp73/223139282846), &nbsp; [좋아요](https://blog.naver.com/aozp73/223139292120), &nbsp; [댓글 기능](https://blog.naver.com/aozp73/223139295036)
+- [프로필 페이지](https://blog.naver.com/aozp73/223139284380), &nbsp; [메인 사진 페이지](https://blog.naver.com/aozp73/223139290533), &nbsp; [인기 페이지](https://blog.naver.com/aozp73/223139292832)
+- [Securit](https://blog.naver.com/aozp73/223139297871), &nbsp; [AOP](https://blog.naver.com/aozp73/223139298401), &nbsp; [OAuth](https://blog.naver.com/aozp73/223139299149), &nbsp; [공통응답 DTO](https://blog.naver.com/aozp73/223139279475)
 
 ### 개념 정리
 - [OAuth, AOP, JPA, SpringBoot 등](https://blog.naver.com/aozp73/223139304730)
@@ -123,21 +111,33 @@
 
     - Query문 작성에 있어 단순히 결과 도출만 하기보단, 부하를 줄이는 것이 중요하다는 것을 느낄 수 있었음 
 
+<br>
+
 ## 시연 영상
 
 
 <br>
 
 ## 기술 스택
+### Back-End
+|<img src = "https://blog.kakaocdn.net/dn/cKtAuQ/btrAIO5fzCU/NVWnU8UlhL93kq81Ve87uK/img.png" width="150" height="150" />|<img src = "https://user-images.githubusercontent.com/122352251/237043703-20b79833-64fb-45f3-a8fa-5c89c116f2b9.png" width="150" height="150" />|<img src = "https://user-images.githubusercontent.com/122352251/237041368-3cf21fef-807d-467c-9d64-659c5ef5a509.png" width="150" height="150" />|<img src = "https://user-images.githubusercontent.com/122352251/237040483-72812c2e-ce53-4d09-8295-4e31c63bb139.png" width="150" height="150" />|<img src = "https://github.com/aozp73/aozp73/assets/122352251/3c69115f-7a02-4bb4-a0de-5d79f743e454" width="150" height="150" />|
+|:--:|:--:|:--:|:--:|:--:| 
+|SpringBoot|Java|SpringBootSecurity|Jpa|MariaDB|
 
 <br>
 
 ## 사용 라이브러리 
-
-<br>
-
-## 기능 설명
-
+- spring-boot-starter-web
+- spring-boot-starter-validation
+- spring-boot-starter-security
+- spring-boot-starter-data-jpa
+- spring-boot-starter-oauth2-client
+- spring-boot-starter-aop
+- spring-security-taglibs
+- spring-boot-devtools
+- mariadb-java-client
+- qlrm
+- lombok
 <br>
 
 ## 테이블 설계
