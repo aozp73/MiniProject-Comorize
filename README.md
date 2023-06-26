@@ -141,5 +141,7 @@
 <br>
 
 ## 테이블 설계
-
+<div align="center">
+        <img width="75%" src="https://github.com/aozp73/aozp73/assets/122352251/fb885369-9e33-42b5-a69c-cc5456b66860"/>
+</div>
 <br>
