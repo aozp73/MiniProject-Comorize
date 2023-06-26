@@ -113,7 +113,21 @@
 
 <br>
 
-## 시연 영상
+## 시연 영상 (클릭 시 확대)
+|||
+| :------------: | :-------------: |
+| 회원가입 / 로그인 / 정보수정 | OAuth 로그인 |
+| ![회원가입_로그인_정보수정](https://github.com/aozp73/aozp73/assets/122352251/ccf7870e-b503-406c-90be-9e9127c8b8e0) | ![Oauth 로그인](https://github.com/aozp73/aozp73/assets/122352251/17a8ef21-4e1c-4003-ab2e-7aea1ac99acd) |
+
+|||
+| :------------: | :-------------: |
+| 프로필 변경 / 게시글 등록 | 구독하기 |
+| ![프로필변경_게시글등록](https://github.com/aozp73/aozp73/assets/122352251/a0fbc483-fcb3-4474-ae6a-731863351503) | ![구독하기](https://github.com/aozp73/aozp73/assets/122352251/9de28bf4-48f4-40cf-af50-9fcd6fb9a737) |
+
+|||
+| :------------: | :-------------: |
+| 댓글 / 좋아요 | |
+| ![댓글_좋아요](https://github.com/aozp73/aozp73/assets/122352251/570ef671-e43b-4b2b-ac64-95cffafe0bd2) | ![빈-화면](https://github.com/aozp73/SideProject-Comorize/assets/122352251/296bdadb-528a-4d32-9a59-c3cc93ee03d5) |
 
 
 <br>
