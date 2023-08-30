@@ -1,12 +1,12 @@
 # Comorize 포토그램
 <div align="center">
-        <img width="80%" src="https://github.com/aozp73/aozp73/assets/122352251/bf91a8bf-79cd-415f-9001-891ee8710cdf"/>
+        <img width="80%" src="https://github.com/aozp73/aozp73/assets/122352251/bb8182bc-b6f9-4db3-bbe3-9d52af2050a7"/>
 </div>
 
 <br>
 
 &nbsp; - 개인 프로젝트 <br>
-&nbsp; - 1차 웹 프로젝트 완료 후, 언어 및 프레임워크 감 유지 및 일부 개념 재정리 목적 (상세 기능은 아래에서 설명)
+&nbsp; - 언어, 프레임워크 및 프로젝트 진행 감 유지 목적 (상세 기능은 아래에서 설명)
 
 <br>
 
