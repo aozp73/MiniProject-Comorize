@@ -8,12 +8,12 @@
 &nbsp; - 개인 프로젝트 <br>
 &nbsp; - 언어, 프레임워크 및 프로젝트 진행 감 유지 목적 (상세 기능은 아래에서 설명)
 
-<br>
+<br> <br>
 
 ## 수행기능
 ### 전체요약
 <div align="center">
-    <img width="60%" src="https://github.com/aozp73/aozp73/assets/122352251/4d350b57-4bc9-4bc2-81b7-78dd02a37fb3"/>
+    <img width="80%" src="https://github.com/aozp73/aozp73/assets/122352251/4d350b57-4bc9-4bc2-81b7-78dd02a37fb3"/>
 </div>
 
 <br>
@@ -26,7 +26,8 @@
 
 ### 개념 정리
 - [OAuth, AOP, JPA, SpringBoot 등](https://blog.naver.com/aozp73/223139304730)
-<br>
+
+<br> <br>
 
 ## 프로젝트 후기
 ### 느낀점
@@ -112,26 +113,34 @@
 
     - Query문 작성에 있어 단순히 결과 도출만 하기보단, 부하를 줄이는 것이 중요하다는 것을 느낄 수 있었음 
 
+<br> <br>
+
+## 시연 영상 
+
+&nbsp;&nbsp; (영상 화질이 고르지 못한 점, 양해 부탁드립니다.)
+
+### 프로필 변경, 게시글 등록 / 구독하기 
+|      기능      |                           영상                            |
+|:----------------:|:---------------------------------------------------------:|
+|    프로필 변경, 게시글 등록  | ![회원가입_로그인_정보수정](https://github.com/aozp73/aozp73/assets/122352251/ccf7870e-b503-406c-90be-9e9127c8b8e0) |
+|    OAuth 로그인  | ![Oauth 로그인](https://github.com/aozp73/aozp73/assets/122352251/17a8ef21-4e1c-4003-ab2e-7aea1ac99acd) |
 <br>
 
-## 시연 영상 (클릭 시 확대)
-|||
-| :------------: | :-------------: |
-| 회원가입 / 로그인 / 정보수정 | OAuth 로그인 |
-| ![회원가입_로그인_정보수정](https://github.com/aozp73/aozp73/assets/122352251/ccf7870e-b503-406c-90be-9e9127c8b8e0) | ![Oauth 로그인](https://github.com/aozp73/aozp73/assets/122352251/17a8ef21-4e1c-4003-ab2e-7aea1ac99acd) |
+### 댓글, 좋아요
+|      기능      |                           영상                            |
+|:----------------:|:---------------------------------------------------------:|
+|    댓글, 좋아요  | ![댓글_좋아요](https://github.com/aozp73/aozp73/assets/122352251/570ef671-e43b-4b2b-ac64-95cffafe0bd2) |
 
-|||
-| :------------: | :-------------: |
-| 프로필 변경 / 게시글 등록 | 구독하기 |
-| ![프로필변경_게시글등록](https://github.com/aozp73/aozp73/assets/122352251/a0fbc483-fcb3-4474-ae6a-731863351503) | ![구독하기](https://github.com/aozp73/aozp73/assets/122352251/9de28bf4-48f4-40cf-af50-9fcd6fb9a737) |
-
-|||
-| :------------: | :-------------: |
-| 댓글 / 좋아요 | |
-| ![댓글_좋아요](https://github.com/aozp73/aozp73/assets/122352251/570ef671-e43b-4b2b-ac64-95cffafe0bd2) | ![빈-화면](https://github.com/aozp73/SideProject-Comorize/assets/122352251/296bdadb-528a-4d32-9a59-c3cc93ee03d5) |
-
-
+### 회원가입, 로그인, 정보수정 / OAuth 로그인 
+|      기능      |                           영상                            |
+|:----------------:|:---------------------------------------------------------:|
+|    회원가입 ~ 정보수정  | ![회원가입_로그인_정보수정](https://github.com/aozp73/aozp73/assets/122352251/ccf7870e-b503-406c-90be-9e9127c8b8e0) |
+|    OAuth 로그인  | ![Oauth 로그인](https://github.com/aozp73/aozp73/assets/122352251/17a8ef21-4e1c-4003-ab2e-7aea1ac99acd) |
 <br>
+
+
+
+<br> <br>
 
 ## 기술 스택
 ### Back-End
@@ -139,7 +148,7 @@
 |:--:|:--:|:--:|:--:|:--:| 
 |SpringBoot|Java|SpringBootSecurity|Jpa|MariaDB|
 
-<br>
+<br> <br>
 
 ## 사용 라이브러리 
 - spring-boot-starter-web
@@ -157,6 +166,6 @@
 
 ## 테이블 설계
 <div align="center">
-        <img width="75%" src="https://github.com/aozp73/aozp73/assets/122352251/fb885369-9e33-42b5-a69c-cc5456b66860"/>
+        <img width="100%" src="https://github.com/aozp73/aozp73/assets/122352251/fb885369-9e33-42b5-a69c-cc5456b66860"/>
 </div>
 <br>
